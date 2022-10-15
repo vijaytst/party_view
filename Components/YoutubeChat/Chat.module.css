@@ -1,0 +1,9 @@
+.chatBox::after {
+	content: '';
+	height: 15px;
+	position: absolute;
+	transform: rotate(45deg) translateY(-1px);
+	right: 8px;
+	width: 10px;
+	background-color: #36404a;
+}

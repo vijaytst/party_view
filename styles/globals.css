@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwindcss /ui;
+@import '~antd/dist/antd.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: black !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+input.input-field:not(:placeholder-shown) + label {
+  height: max-content;
+  font-size: 0.9rem;
+  padding-bottom: 0;
+  background-color: rgba(3, 9, 54, 0.95) !important;
+  width: max-content;
+  top: -0.8rem;
+  left: 1.25rem;
+  /* padding: 0.5rem 0.1rem !important; */
+}
+input.input:placeholder-shown {
+  visibility: hidden;
+  display: none !important;
+}
+input.input-field:focus + label {
+  height: max-content;
+  font-size: 0.9rem;
+  padding-bottom: 0;
+  background-color: rgba(3, 9, 54, 0.95) !important;
+  width: max-content;
+  top: -0.8rem;
+  left: 1.25rem;
+  /* padding: 0,5rem 0.1rem !important; */
+}
+#new-party-form input.input-field:focus + label {
+  background-color: rgb(17, 24, 39) !important;
+}
+
+textarea.input-field:not(:placeholder-shown) + label {
+  height: max-content;
+  font-size: 0.9rem;
+  padding-bottom: 0;
+  background-color: rgba(3, 9, 54, 0.95) !important;
+  width: max-content;
+  top: -0.8rem;
+  left: 1.25rem;
+  /* padding: 0.5rem 0.1rem !important; */
+}
+textarea.input:placeholder-shown {
+  visibility: hidden;
+  display: none !important;
+}
+textarea.input-field:focus + label {
+  height: max-content;
+  font-size: 0.9rem;
+  padding-bottom: 0;
+  background-color: rgba(3, 9, 54, 0.95) !important;
+  width: max-content;
+  top: -0.8rem;
+  left: 1.25rem;
+  /* padding: 0,5rem 0.1rem !important; */
+}
+#new-party-form textarea.input-field:focus + label {
+  background-color: rgb(17, 24, 39) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #e5e7eb;
+}
+
+p {
+  @apply text-sm sm:text-base;
+}
+
+.discover__card:hover > .discover__display {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.discover__display {
+  opacity: 0;
+}
+
+.partyContainer {
+  display: flex;
+  flex-direction: column;
+
+  /* 
+  @media screen and (min-width: 750px) {
+      
+    } */
+}
+
+.partyHolder {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.scheduleFilterContainer {
+  flex-direction: row;
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+  }
+}
+
+.partyCardContainer {
+  width: 30%;
+
+  /* 
+  @media screen and (min-width: 750px) {
+      
+    } */
+}
+
+@media (max-width: 840px) {
+  .partyCardContainer {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .partyContainer {
+    width: 100%;
+  }
+
+  .partyHolder {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.ant-picker-suffix,
+.ant-picker-input input,
+.ant-picker-clear {
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination li {
+  @apply bg-gray-900 font-semibold text-base px-2 sm:px-3 md:px-6 py-2 sm:py-3 flex items-center rounded-lg mr-1 sm:mr-2 md:mr-3;
+}
+
+.pagination .active {
+  background-color: #45a29e;
+}
+
+.kep-login-facebook {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: #4c69ba;
+  border-radius: 7px !important;
+  padding: 0 !important;
+  font-size: small !important;
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  display: flex;
+}
+
+span .ant-upload-list {
+  display: none;
+}
+
+.share-modal .ant-modal-body {
+  background-color: #111726 !important;
+}
+.share-modal .ant-modal-footer {
+  background-color: #111726 !important;
+}
