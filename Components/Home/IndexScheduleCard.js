@@ -10,24 +10,28 @@ const IndexScheduleCard = ({ party, joinParty }) => {
 
   const handleClick = () => {
     setClicked(true);
-    chrome.runtime.sendMessage(
-      "pffaegjjkopdniooioigjfjkncgfiokl",
-      { message: "version" },
-      function (reply) {
-        if (!window.chrome.runtime.lastError) {
-          if (reply) {
-            console.log(reply);
-            if (reply.version) {
-              setHasExtension(true);
+    try {
+      chrome.runtime.sendMessage(
+        "pffaegjjkopdniooioigjfjkncgfiokl",
+        { message: "version" },
+        function (reply) {
+          if (!window.chrome.runtime.lastError) {
+            if (reply) {
+              console.log(reply);
+              if (reply.version) {
+                setHasExtension(true);
+              }
+            } else {
+              setHasExtension(false);
             }
           } else {
             setHasExtension(false);
           }
-        } else {
-          setHasExtension(false);
         }
-      }
-    );
+      );
+    } catch (error) {
+      setHasExtension(false);
+    }
   };
 
   useEffect(() => {
