@@ -5,21 +5,28 @@ import { ShareAltOutlined, EditFilled, DeleteFilled } from "@ant-design/icons";
 
 const IndexScheduleCard = ({ party, joinParty }) => {
   const [loading, setLoading] = useState(false);
-  const [hasExtension, setHasExtension] = useState(false);
+  const [hasExtension, setHasExtension] = useState("");
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
     setClicked(true);
-    chrome.runtime.sendMessage({ message: "version" }, function (reply) {
-      console.log(reply);
-      if (reply) {
-        if (reply.version) {
-          setHasExtension(true);
+    chrome.runtime.sendMessage(
+      "pffaegjjkopdniooioigjfjkncgfiokl",
+      { message: "version" },
+      function (reply) {
+        if (!window.chrome.runtime.lastError) {
+          if (reply) {
+            if (reply.version) {
+              setHasExtension(true);
+            }
+          } else {
+            setHasExtension(false);
+          }
+        } else {
+          setHasExtension(false);
         }
-      } else {
-        setHasExtension(false);
       }
-    });
+    );
   };
 
   useEffect(() => {
