@@ -17,7 +17,6 @@ const IndexScheduleCard = ({ party, joinParty }) => {
         function (reply) {
           if (!window.chrome.runtime.lastError) {
             if (reply) {
-              console.log(reply);
               if (reply.version) {
                 setHasExtension(true);
               }

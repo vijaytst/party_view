@@ -8,16 +8,16 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const httpsOptions = {
-    key: fs.readFileSync("./https_cert/localhost-key.pem"),
-    cert: fs.readFileSync("./https_cert/localhost.pem")
+  key: fs.readFileSync("./https_cert/localhost-key.pem"),
+  cert: fs.readFileSync("./https_cert/localhost.pem"),
 };
 
 app.prepare().then(() => {
-    createServer(httpsOptions, (req, res) => {
-        const parsedUrl = parse(req.url, true);
-        handle(req, res, parsedUrl);
-    }).listen(port, (err) => {
-        if (err) throw err;
-        console.log("ready - started server on url: https://localhost:" + port);
-    });
+  createServer(httpsOptions, (req, res) => {
+    const parsedUrl = parse(req.url, true);
+    handle(req, res, parsedUrl);
+  }).listen(port, (err) => {
+    if (err) throw err;
+    console.log("ready - started server on url: https://localhost:" + port);
+  });
 });
