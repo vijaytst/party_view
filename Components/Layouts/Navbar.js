@@ -17,15 +17,15 @@ const Navbar = ({ notFixed }) => {
   const LogOut = () => {
     DeleteAuthToken();
     localStorage.clear();
-    localStorage.setItem("accessToken", null);
-    router.push("/");
+    localStorage.removeItem("accessToken");
+    document.location.href = "/";
   };
 
   const userlogout = () => {
     DeleteAuthToken();
     localStorage.clear();
     DeleteAuthToken();
-    localStorage.setItem("accessToken", null);
+    localStorage.removeItem("accessToken");
 
     router.replace("/");
   };

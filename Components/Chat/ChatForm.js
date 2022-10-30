@@ -1,9 +1,7 @@
 import React from "react";
-import { socket } from '../../services/socket';
+import { socket } from "../../services/socket";
 
-const ChatForm = ({ value, setValue, userInfo, partyId }) => {
-
-
+const ChatForm = ({ value, setValue, userInfo, partyId, partyInfo }) => {
   const handleChange = (e) => {
     setValue({
       ...value,
@@ -16,12 +14,14 @@ const ChatForm = ({ value, setValue, userInfo, partyId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (true) {
-      console.log('hi')
       socket.emit(
-        "private_message",
-        { ...value, userId: userInfo.data._id || "611cf0bff8a283001decbd73", partyId: partyId },
+        "message_party",
+        {
+          ...value,
+          userId: userInfo.data._id || "611cf0bff8a283001decbd73",
+          partyId: partyId,
+        },
         (data) => {
-    
           setValue({
             message: "",
           });

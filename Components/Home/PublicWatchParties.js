@@ -25,7 +25,7 @@ const PublicWatchParties = ({ movies }) => {
           notification.error({ message: "Sign in to join a party" });
         } else {
           notification.success({ message: "You joined party" });
-          router.push(`/chat?partyId=${id}/${title.replaceAll(" ", "_")}`);
+          router.push(`/chat?partyId=${id?.toString()}`);
           setLoading(false);
         }
       }
